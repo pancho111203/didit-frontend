@@ -5,5 +5,8 @@
  */
 module app{
     'use strict';
-    angular.module("app", []);
+    angular.module("app", [
+        "app.feed",
+        "app.todo",
+    ]);
 }
