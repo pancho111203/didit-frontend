@@ -5,7 +5,7 @@
 module app{
     'use strict';
     export class Event {
-        private experiences: [Experience];
+        private experiences: Experience[];
         private description: string;
 
     }

@@ -2,6 +2,7 @@
  * Created by pancho111203 on 7/12/15.
  */
 /// <reference path="../../../../typings/angularjs/angular.d.ts" />
+/// <reference path="../../../../typings/lodash/lodash.d.ts" />
 
 module app.feed {
     import TodoService = app.todo.TodoService;
@@ -30,6 +31,10 @@ module app.feed {
         // Returns if the experience is already on the done list of the user
         experienceAlreadyOnDoneList(experience: Experience): boolean {
             return _.contains(this.doneService.getElements(), experience);
+        }
+
+        showMoreFeeds() {
+            this.feedService.increaseFeedLength();
         }
     }
     angular.module('app.tree').controller('FeedController', FeedController);

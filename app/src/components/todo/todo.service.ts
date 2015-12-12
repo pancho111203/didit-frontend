@@ -5,7 +5,7 @@
 
 module app.todo {
     export class TodoService {
-        private todoList: [Event];
+        private todoList: Event[];
 
         // Use this method to load all the events of the todo list
         loadTodos(){
@@ -18,10 +18,11 @@ module app.todo {
         }
         //@pre the event exists
         removeEvent(event: Event) {
-            this.todoList.remove(event);
+            var index = this.todoList.indexOf(event);
+            this.todoList.splice(index,1);
             //TODO remove the event from backend
         }
-        getElements(): [Event] {
+        getElements(): Event[] {
             return this.todoList;
         }
     }

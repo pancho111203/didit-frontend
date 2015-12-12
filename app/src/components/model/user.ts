@@ -7,7 +7,7 @@ module app {
         //used to access other users info and view their profiles(this doesn't represent the current user)
         private name: string;
 
-        private experiencesDone: [Experience];
-        private eventsToDo: [Event];
+        private experiencesDone: Experience[];
+        private eventsToDo: Event[];
     }
 }

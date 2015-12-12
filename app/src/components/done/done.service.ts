@@ -5,7 +5,7 @@
 
 module app.done {
     export class DoneService {
-        private doneList: [Experience];
+        private doneList: Experience[];
 
         // Use this method to load all the experiences of the done list
         loadDones(){
@@ -18,10 +18,12 @@ module app.done {
         }
         //@pre the experience exists
         removeExperience(experience: Experience) {
-            this.doneList.remove(experience);
+            var index = this.doneList.indexOf(experience);
+            this.doneList.splice(index,1);
+
             //TODO remove the experience from backend
         }
-        getElements(): [Experience] {
+        getElements(): Experience[] {
             return this.doneList;
         }
     }
